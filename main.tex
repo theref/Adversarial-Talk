@@ -70,7 +70,7 @@ Fool Google's InceptionV3 image classifier \href{https://www.youtube.com/watch?v
 
 \end{frame}
 
-\section{Current Research}
+\section{Create Adversarial Examples}
 
 \begin{frame}{Fast Gradient Sign Method}
 Let $\theta$ be the parameters of a model, $x$ an input to the model and $y$ the target associated with $x$.
@@ -98,7 +98,6 @@ $$
 \cite{Madry_Makelov_Schmidt_Tsipras_Vladu_2017}
 \end{frame}
 
-
 \begin{frame}{Small Issue}
 What if we don't have access to the model?
 \pause
@@ -112,8 +111,50 @@ What if we don't have access to the model?
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Patch Attack}
+Some major differences:
+\begin{itemize}
+    \item Targeted
+    \pause
+    \item Universal
+    \pause
+    \item Robust
+\end{itemize}
+
+\cite{Brown_Mané_Roy_Abadi_Gilmer_2017}
+\end{frame}
+
+\begin{frame}{Example Patch Attack}
+\centering
+\includegraphics[width=0.8\textwidth]{./images/adverse-patch.png}
+
+\href{https://www.youtube.com/watch?v=i1sp4X57TL4}{\alert{video}}
+\cite{Brown_Mané_Roy_Abadi_Gilmer_2017}
+\end{frame}
+
+\begin{frame}{Building Adversarial Patches}
+Given an image $x$, a patch $p$, a location $l$ and transformations $t$ (rotation and scaling) we define a \emph{patch application operator} $A(p, x, l, t)$.
+\pause
+
+To obtain the final adversarial patch $\hat{p}$ we compute:
+$$
+\hat{p} = \operatorname*{arg\,max}_p \mathbb{E}_{x \sim X, l \sim L, t \sim T} (\log P(\hat{y} | A(p, x, l, t)))
+$$
+
+where $\hat{y}$ is the target class. \cite{Athalye_Engstrom_Ilyas_Kwok_2017, Brown_Mané_Roy_Abadi_Gilmer_2017}
+    
+\end{frame}
+
+
+
+
+\section{Current Research}
+
 \begin{frame}{Current Research}
-Hello, world! \cite{Finlayson_Chung_Kohane_Beam_2018}
+\centering
+\includegraphics[width=0.9\textwidth]{./images/adverse-medical.png}
+
+\cite{Finlayson_Chung_Kohane_Beam_2018}
 \end{frame}
 
 \section{Our Plan}
