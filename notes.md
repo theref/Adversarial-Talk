@@ -2,9 +2,6 @@
 
 # Deep Learning in Medicine
 
-The U.S. Food and Drug Administration announced the approval of the first computer vision algorithm that can be utilised for medical diagnosis without the input of a human clinician
-
-
 Collage of some medical imaging applications in which deep learning has achieved state-of-the-art results. From top-left to bottom-right:
 
 - mammographic mass classification
@@ -16,6 +13,9 @@ Collage of some medical imaging applications in which deep learning has achieved
 - breast cancer metastases detection in lymph nodes
 - human expert performance in skin lesion classification
 - and state-of-the-art bone suppression in x-rays
+- 
+
+The U.S. Food and Drug Administration announced the approval of the first computer vision algorithm that can be utilised for medical diagnosis without the input of a human clinician (April 2018)
 
 
 
@@ -24,6 +24,8 @@ Collage of some medical imaging applications in which deep learning has achieved
 Stop signs - With a perturbation in the form of only black and white stickers,we attack a real stop sign, causing targeted miss classification in 100% of the images obtained in lab settings, and in 84.8%of the captured video frames obtained on a moving vehicle(field test) for the target classifier.
 
 Google Inception - We apply our algorithm to complex three-dimensional objects, using 3D-printing to manufacture the first physical adversarial objects.
+
+Video shows a 3D printed turtle. Small histogram is the predictions, green is correct, blue is not bad, red is completely wrong (pause it a few times to discuss)
 
 
 # Why is Medicine important?
@@ -43,6 +45,7 @@ Google Inception - We apply our algorithm to complex three-dimensional objects, 
 
 
 # Create adversarial examples
+- 2 techniques, one imperceptible and one is not
 
 - FGS, small perturbation in the direction of gradient (up the hill)
 - PGD, like FGS but iterative, each move is projected onto allowed set of perturbations
@@ -69,11 +72,15 @@ Create Adversarial Patch
 
 
 # Current Research
-- All publicly available data
-- Classifiers built by fine tuning a pretrained ImageNet Model (with various augmentation)
+- All publicly available data where deep learning has been shown to perform well (eg kaggle)
+- nevus; mark on the skin (ie not a melanoma)
+- Classifiers built by fine tuning a pre-trained ImageNet Model (with various augmentation)
+- nat patch
 - Implemented human-imperceptible (PGD because they trained the model themselves) and patch attacks
 - White box and Black Box Attack
 
 
 # Our plan
-- Break the
+- Break the best systems, ie show they are vulnerable to attack...can the same attack defeat multiple systems?
+- Work out why the attack was successful, what is the mathematical reasoning
+- Figure out ways to make things more robust, image augmentation etc
