@@ -1,45 +1,12 @@
-% \useoutertheme{metropolis}
-% \useinnertheme{metropolis}
-% \usefonttheme{metropolis}
-% \usecolortheme[dark]{solarized}
-
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usemintedstyle[python]{solarizedlight}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
 \usetheme{metropolis}
 
-% A package to include graphics files (jpg, png, eps, pdf etc...)
-\usepackage{graphicx}
-\usepackage{subfig}
-% \usepackage[prefix=sol-]{xcolor-solarized}
-\usepackage{solarized-dark}
-\usepackage{longtable}
-\usepackage{alphalph}
-\renewcommand\thesubfigure{\alphalph{\value{subfigure}}}
-
-% Some basic packages that are almost standad
-\usepackage{booktabs}
-\usepackage{multicol}
-\usepackage{array}
-\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
-\usepackage{media9}
-\usepackage{rotating}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{tikz}
-\usetikzlibrary{shapes}
-\usetikzlibrary{calc}
-\usepackage{minted}
-\usepackage[linesnumbered]{algorithm2e}
-\usepackage{pdfpages}
-
-% \usemintedstyle{solarizedlight}
-\usepackage{listings}
-% Package to get hyperrlinks
-\usepackage{hyperref}
-
-% Package to be able to compile standalone tikz packages
-\usepackage{standalone}
-
-% A package that gives more control for bibliographies than the default
-\usepackage[backend=biber, backref=true, url=true, isbn=true]{biblatex}
-\addbibresource{bibliography.bib}
-
-% \newminted[SourceCode]{python}{mathescape, style=solarizeddark, bgcolor=sol-base03}
+\usepackage[backend=biber]{biblatex}
+\bibliography{bibliography.bib}

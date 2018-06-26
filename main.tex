@@ -32,7 +32,7 @@
 
 \begin{frame}{Adversarial Attacks}
 \centering
-\includegraphics[width=0.95\textwidth]{./images/adverse-road-sign.png}
+\includegraphics[width=0.9\textwidth]{./images/adverse-road-sign.png}
 
 \cite{Eykholt_Evtimov_Fernandes_Li_Rahmati_Xiao_Prakash_Kohno_Song_2017}
 \end{frame}
@@ -72,10 +72,49 @@ Fool Google's InceptionV3 image classifier \href{https://www.youtube.com/watch?v
 
 \section{Current Research}
 
+\begin{frame}{Fast Gradient Sign Method}
+Let $\theta$ be the parameters of a model, $x$ an input to the model and $y$ the target associated with $x$.
+We also have a well defined loss function $L(\theta, x, y)$.
+
+\pause
+
+Then FGSM computes an adversarial example as:
+$$
+x + \epsilon \cdot \text{sign}( \nabla_{x} L(\theta, x, y))
+$$
+
+\cite{Goodfellow_Shlens_Szegedy_2014}
+\end{frame}
+
+\begin{frame}{Projected Gradient Descent}
+PGD make this an iterative process.
+We specify a set of allowed perturbations $\mathcal{S} \in \mathbb{R}^{d}$ (commonly the $l_{\infty}$ ball around $x$) and compute:
+\pause
+
+$$
+x^{t+1} = \Pi_{x + \mathcal{S}} (x^{t} + \epsilon \cdot \text{sign}(\nabla_{x} L(\theta, x, y)))
+$$
+
+\cite{Madry_Makelov_Schmidt_Tsipras_Vladu_2017}
+\end{frame}
+
+
+\begin{frame}{Small Issue}
+What if we don't have access to the model?
+\pause
+
+\begin{itemize}
+    \item If we know the architecture, train our own version
+    \pause
+    \item If we don't know the architecture, but have access to probabilities, use NES (Natural Evolutionary Strategies) Gradient Estimate \cite{Ilyas_Engstrom_Athalye_Lin_2018}
+    \pause
+    \item If we only have access to predicted class, use a Monte Carlo approximation \cite{Ilyas_Engstrom_Athalye_Lin_2018}
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Current Research}
 Hello, world! \cite{Finlayson_Chung_Kohane_Beam_2018}
 \end{frame}
-
 
 \section{Our Plan}
 
